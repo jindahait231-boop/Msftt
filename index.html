@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Pink Store</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#fff0f7;
+    color:#444;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(
+        135deg,
+        #ff1493,
+        #ff69b4,
+        #ffb6d9
+    );
+
+    color:white;
+    text-align:center;
+    padding-bottom:30px;
+
+    box-shadow:
+    0 5px 20px
+    rgba(230,0,115,0.25);
+}
+
+/* GIRL BANNER */
+
+.banner{
+    width:100%;
+    height:300px;
+    overflow:hidden;
+    position:relative;
+}
+
+.banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.banner::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255,20,147,0.05),
+        rgba(230,0,115,0.45)
+    );
+}
+
+/* LOGO */
+
+.logo{
+    width:85px;
+    height:85px;
+
+    background:white;
+    color:#e60073;
+
+    border-radius:50%;
+
+    margin:-40px auto 10px;
+
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:45px;
+
+    box-shadow:
+    0 5px 15px
+    rgba(0,0,0,0.15);
+}
+
+header h1{
+    margin:10px 0 5px;
+    font-size:32px;
+}
+
+header p{
+    margin:0;
+    font-size:17px;
+}
+
+/* WELCOME */
+
+.welcome{
+    text-align:center;
+    padding:25px 15px 10px;
+}
+
+.welcome h2{
+    color:#e60073;
+    margin:5px 0 8px;
+}
+
+.welcome p{
+    color:#777;
+    margin:0;
+    line-height:1.6;
+}
+
+/* PAGE TITLE */
+
+.page-title{
+    text-align:center;
+    color:#e60073;
+    font-size:25px;
+    margin:20px 0;
+}
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+
+    max-width:1100px;
+    margin:auto;
+
+    padding:10px 20px 30px;
+}
+
+/* PRODUCT CARD */
+
+.product{
+    background:white;
+    padding:12px;
+    border-radius:22px;
+    text-align:center;
+
+    box-shadow:
+    0 6px 20px
+    rgba(255,105,180,0.25);
+
+    transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.product:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px
+    rgba(255,105,180,0.35);
+}
+
+/* BIG 1:1 IMAGE */
+
+.image-slider{
+    position:relative;
+    width:100%;
+
+    aspect-ratio:1 / 1;
+
+    overflow:hidden;
+    border-radius:18px;
+
+    background:#f8f8f8;
+}
+
+.image-slider img{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+}
+
+.image-slider img:first-child{
+    animation:photoOne 6s infinite;
+}
+
+.image-slider img:last-child{
+    animation:photoTwo 6s infinite;
+}
+
+/* IMAGE ANIMATION */
+
+@keyframes photoOne{
+
+    0%{
+        opacity:1;
+    }
+
+    45%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0;
+    }
+
+    95%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
+
+@keyframes photoTwo{
+
+    0%{
+        opacity:0;
+    }
+
+    45%{
+        opacity:0;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    95%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+/* PRODUCT NAME */
+
+.product h2{
+    color:#e60073;
+    font-size:20px;
+
+    margin:
+    14px 0 8px;
+}
+
+/* DESCRIPTION */
+
+.description{
+    color:#777;
+    font-size:14px;
+
+    line-height:1.5;
+
+    min-height:63px;
+
+    margin:
+    5px 5px 10px;
+}
+
+/* PRICE */
+
+.price{
+    color:#e60073;
+
+    font-size:23px;
+    font-weight:bold;
+
+    margin:
+    10px 0 14px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    width:100%;
+
+    background:#25D366;
+    color:white;
+
+    border:none;
+
+    padding:
+    13px 8px;
+
+    border-radius:30px;
+
+    font-size:15px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:
+    background 0.2s;
+}
+
+.whatsapp:hover{
+    background:#128C7E;
+}
+
+/* PAGINATION */
+
+.pagination{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin:
+    10px 10px 40px;
+}
+
+.pagination button{
+    background:#e60073;
+    color:white;
+
+    border:none;
+
+    padding:
+    12px 22px;
+
+    border-radius:25px;
+
+    font-size:15px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.pagination button:disabled{
+    background:#ffb6d9;
+    cursor:not-allowed;
+}
+
+#pageNumber{
+    color:#e60073;
+
+    font-size:17px;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    background:#ff69b4;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+    margin-top:20px;
+
+    line-height:1.8;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .banner{
+        height:230px;
+    }
+
+    .logo{
+        width:75px;
+        height:75px;
+
+        font-size:38px;
+
+        margin-top:-35px;
+    }
+
+    header h1{
+        font-size:27px;
+    }
+
+    .products{
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:10px;
+
+        padding:10px;
+    }
+
+    .product{
+        padding:7px;
+        border-radius:17px;
+    }
+
+    .image-slider{
+        width:100%;
+
+        aspect-ratio:1 / 1;
+
+        border-radius:14px;
+    }
+
+    .product h2{
+        font-size:16px;
+
+        margin:
+        10px 0 5px;
+    }
+
+    .description{
+        font-size:12px;
+
+        min-height:72px;
+
+        margin:
+        5px 2px;
+    }
+
+    .price{
+        font-size:19px;
+
+        margin:
+        8px 0 10px;
+    }
+
+    .whatsapp{
+        font-size:11px;
+
+        padding:
+        11px 2px;
+    }
+}
+
+@media(max-width:350px){
+
+    .products{
+        gap:7px;
+        padding:6px;
+    }
+
+    .product{
+        padding:5px;
+    }
+
+    .product h2{
+        font-size:14px;
+    }
+
+    .description{
+        font-size:11px;
+    }
+
+    .whatsapp{
+        font-size:10px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="banner">
+
+<img
+src="/d92bff87c2e0fd575e3a9b198ff85c9a.jpg"
+alt="Pink Beauty Store">
+
+</div>
+
+
+<div class="logo">
+💄
+</div>
+
+
+<h1>
+My Pink Store
+</h1>
+
+
+<p>
+Beautiful Products At Best Prices 💗
+</p>
+
+</header>
+
+
+<!-- WELCOME -->
+
+<section class="welcome">
+
+<h2>
+🌸 Welcome To My Pink Store 🌸
+</h2>
+
+<p>
+
+Discover beautiful beauty products
+at amazing prices.
+
+<br>
+
+Choose your favourite product
+and order directly on WhatsApp 💗
+
+</p>
+
+</section>
+
+
+<!-- PAGE TITLE -->
+
+<h2
+class="page-title"
+id="pageTitle">
+
+✨ Beauty Products - Page 1 ✨
+
+</h2>
+
+
+<!-- PRODUCTS -->
+
+<div
+class="products"
+id="products">
+
+</div>
+
+
+<!-- PAGINATION -->
+
+<div class="pagination">
+
+<button
+id="prevBtn"
+onclick="previousPage()">
+
+← Previous
+
+</button>
+
+
+<span id="pageNumber">
+
+Page 1 of 20
+
+</span>
+
+
+<button
+id="nextBtn"
+onclick="nextPage()">
+
+Next →
+
+</button>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+💗 Thank You For Visiting My Pink Store 💗
+
+<br>
+
+🛍️ Order Your Favourite Product On WhatsApp
+
+</footer>
+
+
+<script>
+
+
+/* =========================================
+   WHATSAPP NUMBER
+========================================= */
+
+/*
+   Yaha apna WhatsApp number likho.
+
+   Example:
+
+   let whatsappNumber =
+   "919876543210";
+
+   Country code ke saath number likhna hai.
+*/
+
+let whatsappNumber =
+"919XXXXXXXXX";
+
+
+/* =========================================
+   PRODUCTS
+========================================= */
+
+/*
+   TOTAL PRODUCTS = 140
+
+   20 PAGES × 7 PRODUCTS = 140
+
+   Har product ki 2 photos hain.
+
+   Photo folder:
+
+   images/product1a.jpg
+   images/product1b.jpg
+
+   images/product2a.jpg
+   images/product2b.jpg
+
+   ...
+
+   images/product140a.jpg
+   images/product140b.jpgbeau
+*/
+
+
+let products = [
+
+{
+name:"Pink Lipstick",
+description:"Beautiful pink lipstick with smooth texture and long-lasting colour. Perfect for daily makeup and special occasions.",
+price:499,
+image1:"product1a.jpg",
+image2:"product1b.jpg"
+},
+
+{
+name:"Face Cream",
+description:"Soft and lightweight face cream for everyday beauty care. Gives your skin a fresh and smooth look.",
+price:399,
+image1:"product2a.jpg",
+image2:"product2b.jpg"
+},
+
+{
+name:"Face Serum",
+description:"Lightweight beauty serum designed for a fresh-looking and glowing appearance. Easy to use every day.",
+price:599,
+image1:"product3a.jpg",
+image2:"product3b.jpg"
+},
+
+{
+name:"Beauty Cream",
+description:"Lovely beauty cream with a smooth feel. A simple addition to your everyday beauty routine.",
+price:299,
+image1:"product4a.jpg",
+image2:"product4b.jpg"
+},
+
+{
+name:"Face Wash",
+description:"Refreshing face wash for your daily skincare routine. Leaves your face feeling clean and fresh.",
+price:249,
+image1:"product5a.jpg",
+image2:"product5b.jpg"
+},
+
+{
+name:"Moisturizer",
+description:"Lightweight moisturizer for everyday skincare. Helps keep your skin feeling soft and comfortable.",
+price:349,
+image1:"product6a.jpg",
+image2:"product6b.jpg"
+},
+
+{
+name:"Sunscreen",
+description:"Easy-to-use sunscreen for your daily outdoor beauty routine. Perfect for everyday use.",
+price:449,
+image1:"product7a.jpg",
+image2:"product7b.jpg"
+},
+
+{
+name:"Mascara",
+description:"Beautiful mascara for creating an attractive eye makeup look. Perfect for everyday styling.",
+price:399,
+image1:"product8a.jpg",
+image2:"product8b.jpg"
+},
+
+{
+name:"Eyeliner",
+description:"Smooth eyeliner for creating beautiful eye makeup styles. Easy to apply for a neat look.",
+price:299,
+image1:"product9a.jpg",
+image2:"product9b.jpg"
+},
+
+{
+name:"Compact Powder",
+description:"Compact powder for a smooth and neat makeup finish. Great for your everyday beauty kit.",
+price:499,
+image1:"product10a.jpg",
+image2:"product10b.jpg"
+},
+
+{
+name:"Foundation",
+description:"Smooth foundation for creating an even-looking makeup base. Suitable for your daily makeup routine.",
+price:699,
+image1:"product11a.jpg",
+image2:"product11b.jpg"
+},
+
+{
+name:"Blush",
+description:"Beautiful blush for adding a lovely touch of colour to your makeup look.",
+price:399,
+image1:"product12a.jpg",
+image2:"product12b.jpg"
+},
+
+{
+name:"Highlighter",
+description:"Shimmering highlighter to add a beautiful glow to your makeup style.",
+price:549,
+image1:"product13a.jpg",
+image2:"product13b.jpg"
+},
+
+{
+name:"Makeup Kit",
+description:"Complete beauty makeup kit with useful products for creating different makeup looks.",
+price:999,
+image1:"product14a.jpg",
+image2:"product14b.jpg"
+},
+
+{
+name:"Beauty Product 15",
+description:"Beautiful beauty product for your everyday makeup and personal beauty routine.",
+price:399,
+image1:"product15a.jpg",
+image2:"product15b.jpg"
+},
+
+{
+name:"Beauty Product 16",
+description:"Lovely beauty product with an attractive design. Perfect for adding to your beauty collection.",
+price:499,
+image1:"product16a.jpg",
+image2:"product16b.jpg"
+},
+
+{
+name:"Beauty Product 17",
+description:"Useful beauty product for your everyday beauty routine and makeup collection.",
+price:599,
+image1:"product17a.jpg",
+image2:"product17b.jpg"
+},
+
+{
+name:"Beauty Product 18",
+description:"Beautiful product designed for your daily beauty and makeup needs.",
+price:299,
+image1:"product18a.jpg",
+image2:"product18b.jpg"
+},
+
+{
+name:"Beauty Product 19",
+description:"Stylish beauty product that is perfect for your personal beauty collection.",
+price:699,
+image1:"product19a.jpg",
+image2:"product19b.jpg"
+},
+
+{
+name:"Beauty Product 20",
+description:"Lovely beauty product for everyday use. A great addition to your beauty collection.",
+price:799,
+image1:"product20a.jpg",
+image2:"product20b.jpg"
+},
+
+{
+name:"Beauty Product 21",
+description:"Beautiful beauty item with a stylish look for your daily beauty routine.",
+price:899,
+image1:"product21a.jpg",
+image2:"product21b.jpg"
+},
+
+{
+name:"Beauty Product 22",
+description:"Elegant beauty product for your makeup collection and everyday beauty needs.",
+price:299,
+image1:"product22a.jpg",
+image2:"product22b.jpg"
+},
+
+{
+name:"Beauty Product 23",
+description:"Lovely beauty item designed for everyday beauty and makeup styling.",
+price:399,
+image1:"product23a.jpg",
+image2:"product23b.jpg"
+},
+
+{
+name:"Beauty Product 24",
+description:"Beautiful product with an attractive look. Perfect for your beauty collection.",
+price:499,
+image1:"product24a.jpg",
+image2:"product24b.jpg"
+},
+
+{
+name:"Beauty Product 25",
+description:"Everyday beauty product for creating a stylish and beautiful look.",
+price:599,
+image1:"product25a.jpg",
+image2:"product25b.jpg"
+},
+
+{
+name:"Beauty Product 26",
+description:"Useful beauty product for your personal makeup and beauty collection.",
+price:699,
+image1:"product26a.jpg",
+image2:"product26b.jpg"
+},
+
+{
+name:"Beauty Product 27",
+description:"Beautiful and stylish beauty product for everyday use.",
+price:799,
+image1:"product27a.jpg",
+image2:"product27b.jpg"
+},
+
+{
+name:"Beauty Product 28",
+description:"Lovely beauty product for your daily makeup and beauty routine.",
+price:899,
+image1:"product28a.jpg",
+image2:"product28b.jpg"
+},
+
+{
+name:"Beauty Product 29",
+description:"Beautiful product for adding to your everyday beauty collection.",
+price:299,
+image1:"product29a.jpg",
+image2:"product29b.jpg"
+},
+
+{
+name:"Beauty Product 30",
+description:"Stylish beauty product perfect for everyday beauty and makeup needs.",
+price:399,
+image1:"product30a.jpg",
+image2:"product30b.jpg"
+},
+
+{
+name:"Beauty Product 31",
+description:"Lovely beauty product for your daily beauty routine.",
+price:499,
+image1:"product31a.jpg",
+image2:"product31b.jpg"
+},
+
+{
+name:"Beauty Product 32",
+description:"Beautiful beauty item for your personal collection.",
+price:599,
+image1:"product32a.jpg",
+image2:"product32b.jpg"
+},
+
+{
+name:"Beauty Product 33",
+description:"Stylish product for everyday makeup and beauty use.",
+price:699,
+image1:"product33a.jpg",
+image2:"product33b.jpg"
+},
+
+{
+name:"Beauty Product 34",
+description:"Lovely product with an attractive design for your beauty collection.",
+price:799,
+image1:"product34a.jpg",
+image2:"product34b.jpg"
+},
+
+{
+name:"Beauty Product 35",
+description:"Beautiful beauty product for your everyday routine.",
+price:899,
+image1:"product35a.jpg",
+image2:"product35b.jpg"
+},
+
+{
+name:"Beauty Product 36",
+description:"Useful beauty item for daily makeup and beauty needs.",
+price:299,
+image1:"product36a.jpg",
+image2:"product36b.jpg"
+},
+
+{
+name:"Beauty Product 37",
+description:"Beautiful product for your makeup and beauty collection.",
+price:399,
+image1:"product37a.jpg",
+image2:"product37b.jpg"
+},
+
+{
+name:"Beauty Product 38",
+description:"Lovely beauty product for your everyday styling routine.",
+price:499,
+image1:"product38a.jpg",
+image2:"product38b.jpg"
+},
+
+{
+name:"Beauty Product 39",
+description:"Stylish beauty product for daily use and personal collection.",
+price:599,
+image1:"product39a.jpg",
+image2:"product39b.jpg"
+},
+
+{
+name:"Beauty Product 40",
+description:"Beautiful product designed for your daily beauty routine.",
+price:699,
+image1:"product40a.jpg",
+image2:"product40b.jpg"
+},
+
+{
+name:"Beauty Product 41",
+description:"Lovely beauty product with an elegant and attractive design.",
+price:799,
+image1:"product41a.jpg",
+image2:"product41b.jpg"
+},
+
+{
+name:"Beauty Product 42",
+description:"Useful beauty item for everyday makeup and styling.",
+price:899,
+image1:"product42a.jpg",
+image2:"product42b.jpg"
+},
+
+{
+name:"Beauty Product 43",
+description:"Beautiful product for your personal beauty collection.",
+price:299,
+image1:"product43a.jpg",
+image2:"product43b.jpg"
+},
+
+{
+name:"Beauty Product 44",
+description:"Stylish beauty item for your everyday beauty needs.",
+price:399,
+image1:"product44a.jpg",
+image2:"product44b.jpg"
+},
+
+{
+name:"Beauty Product 45",
+description:"Lovely product for daily beauty and makeup routine.",
+price:499,
+image1:"product45a.jpg",
+image2:"product45b.jpg"
+},
+
+{
+name:"Beauty Product 46",
+description:"Beautiful beauty product with a stylish look.",
+price:599,
+image1:"product46a.jpg",
+image2:"product46b.jpg"
+},
+
+{
+name:"Beauty Product 47",
+description:"Useful product for your everyday beauty collection.",
+price:699,
+image1:"product47a.jpg",
+image2:"product47b.jpg"
+},
+
+{
+name:"Beauty Product 48",
+description:"Lovely beauty item for daily makeup and beauty use.",
+price:799,
+image1:"product48a.jpg",
+image2:"product48b.jpg"
+},
+
+{
+name:"Beauty Product 49",
+description:"Beautiful product for adding to your beauty collection.",
+price:899,
+image1:"product49a.jpg",
+image2:"product49b.jpg"
+},
+
+{
+name:"Beauty Product 50",
+description:"Stylish beauty product for everyday use.",
+price:299,
+image1:"product50a.jpg",
+image2:"product50b.jpg"
+},
+
+{
+name:"Beauty Product 51",
+description:"Lovely beauty product for your personal beauty routine.",
+price:399,
+image1:"product51a.jpg",
+image2:"product51b.jpg"
+},
+
+{
+name:"Beauty Product 52",
+description:"Beautiful product designed for daily beauty needs.",
+price:499,
+image1:"product52a.jpg",
+image2:"product52b.jpg"
+},
+
+{
+name:"Beauty Product 53",
+description:"Useful beauty item for your makeup collection.",
+price:599,
+image1:"product53a.jpg",
+image2:"product53b.jpg"
+},
+
+{
+name:"Beauty Product 54",
+description:"Stylish product for everyday beauty and makeup.",
+price:699,
+image1:"product54a.jpg",
+image2:"product54b.jpg"
+},
+
+{
+name:"Beauty Product 55",
+description:"Lovely beauty product for your daily routine.",
+price:799,
+image1:"product55a.jpg",
+image2:"product55b.jpg"
+},
+
+{
+name:"Beauty Product 56",
+description:"Beautiful product for your personal beauty collection.",
+price:899,
+image1:"product56a.jpg",
+image2:"product56b.jpg"
+},
+
+{
+name:"Beauty Product 57",
+description:"Useful beauty product for everyday use.",
+price:299,
+image1:"product57a.jpg",
+image2:"product57b.jpg"
+},
+
+{
+name:"Beauty Product 58",
+description:"Lovely beauty item for daily makeup styling.",
+price:399,
+image1:"product58a.jpg",
+image2:"product58b.jpg"
+},
+
+{
+name:"Beauty Product 59",
+description:"Beautiful beauty product with an attractive look.",
+price:499,
+image1:"product59a.jpg",
+image2:"product59b.jpg"
+},
+
+{
+name:"Beauty Product 60",
+description:"Stylish product for your beauty collection.",
+price:599,
+image1:"product60a.jpg",
+image2:"product60b.jpg"
+},
+
+{
+name:"Beauty Product 61",
+description:"Lovely beauty product for daily beauty needs.",
+price:699,
+image1:"product61a.jpg",
+image2:"product61b.jpg"
+},
+
+{
+name:"Beauty Product 62",
+description:"Beautiful product for everyday makeup use.",
+price:799,
+image1:"product62a.jpg",
+image2:"product62b.jpg"
+},
+
+{
+name:"Beauty Product 63",
+description:"Useful beauty item for your daily routine.",
+price:899,
+image1:"product63a.jpg",
+image2:"product63b.jpg"
+},
+
+{
+name:"Beauty Product 64",
+description:"Lovely beauty product for your collection.",
+price:299,
+image1:"product64a.jpg",
+image2:"product64b.jpg"
+},
+
+{
+name:"Beauty Product 65",
+description:"Beautiful and stylish product for everyday use.",
+price:399,
+image1:"product65a.jpg",
+image2:"product65b.jpg"
+},
+
+{
+name:"Beauty Product 66",
+description:"Useful beauty product for your makeup routine.",
+price:499,
+image1:"product66a.jpg",
+image2:"product66b.jpg"
+},
+
+{
+name:"Beauty Product 67",
+description:"Lovely beauty item for daily styling.",
+price:599,
+image1:"product67a.jpg",
+image2:"product67b.jpg"
+},
+
+{
+name:"Beauty Product 68",
+description:"Beautiful product for your beauty collection.",
+price:699,
+image1:"product68a.jpg",
+image2:"product68b.jpg"
+},
+
+{
+name:"Beauty Product 69",
+description:"Stylish beauty product for everyday needs.",
+price:799,
+image1:"product69a.jpg",
+image2:"product69b.jpg"
+},
+
+{
+name:"Beauty Product 70",
+description:"Lovely beauty product for daily use.",
+price:899,
+image1:"product70a.jpg",
+image2:"product70b.jpg"
+},
+
+{
+name:"Beauty Product 71",
+description:"Beautiful beauty item for your makeup collection.",
+price:299,
+image1:"product71a.jpg",
+image2:"product71b.jpg"
+},
+
+{
+name:"Beauty Product 72",
+description:"Useful product for your daily beauty routine.",
+price:399,
+image1:"product72a.jpg",
+image2:"product72b.jpg"
+},
+
+{
+name:"Beauty Product 73",
+description:"Lovely beauty product with an attractive design.",
+price:499,
+image1:"product73a.jpg",
+image2:"product73b.jpg"
+},
+
+{
+name:"Beauty Product 74",
+description:"Beautiful product for everyday makeup needs.",
+price:599,
+image1:"product74a.jpg",
+image2:"product74b.jpg"
+},
+
+{
+name:"Beauty Product 75",
+description:"Stylish beauty item for your personal collection.",
+price:699,
+image1:"product75a.jpg",
+image2:"product75b.jpg"
+},
+
+{
+name:"Beauty Product 76",
+description:"Lovely beauty product for everyday use.",
+price:799,
+image1:"product76a.jpg",
+image2:"product76b.jpg"
+},
+
+{
+name:"Beauty Product 77",
+description:"Beautiful beauty product for your daily routine.",
+price:899,
+image1:"product77a.jpg",
+image2:"product77b.jpg"
+},
+
+{
+name:"Beauty Product 78",
+description:"Useful beauty product for makeup and styling.",
+price:299,
+image1:"product78a.jpg",
+image2:"product78b.jpg"
+},
+
+{
+name:"Beauty Product 79",
+description:"Lovely product for your beauty collection.",
+price:399,
+image1:"product79a.jpg",
+image2:"product79b.jpg"
+},
+
+{
+name:"Beauty Product 80",
+description:"Beautiful and stylish beauty product.",
+price:499,
+image1:"product80a.jpg",
+image2:"product80b.jpg"
+},
+
+{
+name:"Beauty Product 81",
+description:"Useful beauty item for everyday beauty.",
+price:599,
+image1:"product81a.jpg",
+image2:"product81b.jpg"
+},
+
+{
+name:"Beauty Product 82",
+description:"Lovely beauty product for daily use.",
+price:699,
+image1:"product82a.jpg",
+image2:"product82b.jpg"
+},
+
+{
+name:"Beauty Product 83",
+description:"Beautiful product for your makeup collection.",
+price:799,
+image1:"product83a.jpg",
+image2:"product83b.jpg"
+},
+
+{
+name:"Beauty Product 84",
+description:"Stylish beauty item for your everyday routine.",
+price:899,
+image1:"product84a.jpg",
+image2:"product84b.jpg"
+},
+
+{
+name:"Beauty Product 85",
+description:"Lovely product for daily beauty needs.",
+price:299,
+image1:"product85a.jpg",
+image2:"product85b.jpg"
+},
+
+{
+name:"Beauty Product 86",
+description:"Beautiful beauty product for your collection.",
+price:399,
+image1:"product86a.jpg",
+image2:"product86b.jpg"
+},
+
+{
+name:"Beauty Product 87",
+description:"Useful beauty item for everyday use.",
+price:499,
+image1:"product87a.jpg",
+image2:"product87b.jpg"
+},
+
+{
+name:"Beauty Product 88",
+description:"Lovely beauty product for makeup styling.",
+price:599,
+image1:"product88a.jpg",
+image2:"product88b.jpg"
+},
+
+{
+name:"Beauty Product 89",
+description:"Beautiful product for your personal beauty routine.",
+price:699,
+image1:"product89a.jpg",
+image2:"product89b.jpg"
+},
+
+{
+name:"Beauty Product 90",
+description:"Stylish beauty product for daily use.",
+price:799,
+image1:"product90a.jpg",
+image2:"product90b.jpg"
+},
+
+{
+name:"Beauty Product 91",
+description:"Lovely beauty item for your collection.",
+price:899,
+image1:"product91a.jpg",
+image2:"product91b.jpg"
+},
+
+{
+name:"Beauty Product 92",
+description:"Beautiful product for everyday beauty needs.",
+price:299,
+image1:"product92a.jpg",
+image2:"product92b.jpg"
+},
+
+{
+name:"Beauty Product 93",
+description:"Useful beauty product for your makeup routine.",
+price:399,
+image1:"product93a.jpg",
+image2:"product93b.jpg"
+},
+
+{
+name:"Beauty Product 94",
+description:"Lovely beauty product with a stylish design.",
+price:499,
+image1:"product94a.jpg",
+image2:"product94b.jpg"
+},
+
+{
+name:"Beauty Product 95",
+description:"Beautiful beauty item for daily use.",
+price:599,
+image1:"product95a.jpg",
+image2:"product95b.jpg"
+},
+
+{
+name:"Beauty Product 96",
+description:"Stylish product for your beauty collection.",
+price:699,
+image1:"product96a.jpg",
+image2:"product96b.jpg"
+},
+
+{
+name:"Beauty Product 97",
+description:"Lovely beauty product for everyday routine.",
+price:799,
+image1:"product97a.jpg",
+image2:"product97b.jpg"
+},
+
+{
+name:"Beauty Product 98",
+description:"Beautiful product for daily makeup needs.",
+price:899,
+image1:"product98a.jpg",
+image2:"product98b.jpg"
+},
+
+{
+name:"Beauty Product 99",
+description:"Useful beauty item for your collection.",
+price:299,
+image1:"product99a.jpg",
+image2:"product99b.jpg"
+},
+
+{
+name:"Beauty Product 100",
+description:"Lovely beauty product for everyday use.",
+price:399,
+image1:"product100a.jpg",
+image2:"product100b.jpg"
+},
+
+{
+name:"Beauty Product 101",
+description:"Beautiful beauty product for daily styling.",
+price:499,
+image1:"product101a.jpg",
+image2:"product101b.jpg"
+},
+
+{
+name:"Beauty Product 102",
+description:"Stylish beauty item for your personal collection.",
+price:599,
+image1:"product102a.jpg",
+image2:"product102b.jpg"
+},
+
+{
+name:"Beauty Product 103",
+description:"Useful product for your daily beauty routine.",
+price:699,
+image1:"product103a.jpg",
+image2:"product103b.jpg"
+},
+
+{
+name:"Beauty Product 104",
+description:"Lovely beauty product for makeup and styling.",
+price:799,
+image1:"product104a.jpg",
+image2:"product104b.jpg"
+},
+
+{
+name:"Beauty Product 105",
+description:"Beautiful product for your beauty collection.",
+price:899,
+image1:"product105a.jpg",
+image2:"product105b.jpg"
+},
+
+{
+name:"Beauty Product 106",
+description:"Stylish beauty product for everyday use.",
+price:299,
+image1:"product106a.jpg",
+image2:"product106b.jpg"
+},
+
+{
+name:"Beauty Product 107",
+description:"Lovely beauty item for daily beauty needs.",
+price:399,
+image1:"product107a.jpg",
+image2:"product107b.jpg"
+},
+
+{
+name:"Beauty Product 108",
+description:"Beautiful product for your makeup collection.",
+price:499,
+image1:"product108a.jpg",
+image2:"product108b.jpg"
+},
+
+{
+name:"Beauty Product 109",
+description:"Useful beauty product for everyday routine.",
+price:599,
+image1:"product109a.jpg",
+image2:"product109b.jpg"
+},
+
+{
+name:"Beauty Product 110",
+description:"Lovely beauty product with a beautiful look.",
+price:699,
+image1:"product110a.jpg",
+image2:"product110b.jpg"
+},
+
+{
+name:"Beauty Product 111",
+description:"Stylish product for your daily beauty needs.",
+price:799,
+image1:"product111a.jpg",
+image2:"product111b.jpg"
+},
+
+{
+name:"Beauty Product 112",
+description:"Beautiful beauty item for everyday use.",
+price:899,
+image1:"product112a.jpg",
+image2:"product112b.jpg"
+},
+
+{
+name:"Beauty Product 113",
+description:"Useful beauty product for your collection.",
+price:299,
+image1:"product113a.jpg",
+image2:"product113b.jpg"
+},
+
+{
+name:"Beauty Product 114",
+description:"Lovely product for makeup and daily styling.",
+price:399,
+image1:"product114a.jpg",
+image2:"product114b.jpg"
+},
+
+{
+name:"Beauty Product 115",
+description:"Beautiful beauty product for everyday needs.",
+price:499,
+image1:"product115a.jpg",
+image2:"product115b.jpg"
+},
+
+{
+name:"Beauty Product 116",
+description:"Stylish beauty item for your collection.",
+price:599,
+image1:"product116a.jpg",
+image2:"product116b.jpg"
+},
+
+{
+name:"Beauty Product 117",
+description:"Useful beauty product for daily beauty routine.",
+price:699,
+image1:"product117a.jpg",
+image2:"product117b.jpg"
+},
+
+{
+name:"Beauty Product 118",
+description:"Lovely beauty product for everyday use.",
+price:799,
+image1:"product118a.jpg",
+image2:"product118b.jpg"
+},
+
+{
+name:"Beauty Product 119",
+description:"Beautiful product for your makeup collection.",
+price:899,
+image1:"product119a.jpg",
+image2:"product119b.jpg"
+},
+
+{
+name:"Beauty Product 120",
+description:"Stylish beauty product for daily use.",
+price:299,
+image1:"product120a.jpg",
+image2:"product120b.jpg"
+},
+
+{
+name:"Beauty Product 121",
+description:"Lovely beauty item for your beauty routine.",
+price:399,
+image1:"product121a.jpg",
+image2:"product121b.jpg"
+},
+
+{
+name:"Beauty Product 122",
+description:"Beautiful product for everyday makeup needs.",
+price:499,
+image1:"product122a.jpg",
+image2:"product122b.jpg"
+},
+
+{
+name:"Beauty Product 123",
+description:"Useful beauty product for your personal collection.",
+price:599,
+image1:"product123a.jpg",
+image2:"product123b.jpg"
+},
+
+{
+name:"Beauty Product 124",
+description:"Lovely beauty product for daily styling.",
+price:699,
+image1:"product124a.jpg",
+image2:"product124b.jpg"
+},
+
+{
+name:"Beauty Product 125",
+description:"Beautiful beauty item for everyday use.",
+price:799,
+image1:"product125a.jpg",
+image2:"product125b.jpg"
+},
+
+{
+name:"Beauty Product 126",
+description:"Stylish product for your beauty collection.",
+price:899,
+image1:"product126a.jpg",
+image2:"product126b.jpg"
+},
+
+{
+name:"Beauty Product 127",
+description:"Useful beauty product for your daily routine.",
+price:299,
+image1:"product127a.jpg",
+image2:"product127b.jpg"
+},
+
+{
+name:"Beauty Product 128",
+description:"Lovely product for makeup and beauty needs.",
+price:399,
+image1:"product128a.jpg",
+image2:"product128b.jpg"
+},
+
+{
+name:"Beauty Product 129",
+description:"Beautiful beauty product for everyday use.",
+price:499,
+image1:"product129a.jpg",
+image2:"product129b.jpg"
+},
+
+{
+name:"Beauty Product 130",
+description:"Stylish beauty item for your collection.",
+price:599,
+image1:"product130a.jpg",
+image2:"product130b.jpg"
+},
+
+{
+name:"Beauty Product 131",
+description:"Useful product for daily beauty routine.",
+price:699,
+image1:"product131a.jpg",
+image2:"product131b.jpg"
+},
+
+{
+name:"Beauty Product 132",
+description:"Lovely beauty product for your makeup collection.",
+price:799,
+image1:"product132a.jpg",
+image2:"product132b.jpg"
+},
+
+{
+name:"Beauty Product 133",
+description:"Beautiful product for everyday beauty needs.",
+price:899,
+image1:"product133a.jpg",
+image2:"product133b.jpg"
+},
+
+{
+name:"Beauty Product 134",
+description:"Stylish beauty product for daily use.",
+price:299,
+image1:"product134a.jpg",
+image2:"product134b.jpg"
+},
+
+{
+name:"Beauty Product 135",
+description:"Lovely beauty item for your collection.",
+price:399,
+image1:"product135a.jpg",
+image2:"product135b.jpg"
+},
+
+{
+name:"Beauty Product 136",
+description:"Beautiful beauty product for your daily routine.",
+price:499,
+image1:"product136a.jpg",
+image2:"product136b.jpg"
+},
+
+{
+name:"Beauty Product 137",
+description:"Useful product for everyday makeup and styling.",
+price:599,
+image1:"product137a.jpg",
+image2:"product137b.jpg"
+},
+
+{
+name:"Beauty Product 138",
+description:"Lovely beauty product for your personal collection.",
+price:699,
+image1:"product138a.jpg",
+image2:"product138b.jpg"
+},
+
+{
+name:"Beauty Product 139",
+description:"Beautiful product for daily beauty needs.",
+price:799,
+image1:"product139a.jpg",
+image2:"product139b.jpg"
+},
+
+{
+name:"Beauty Product 140",
+description:"Stylish beauty product for your everyday beauty routine.",
+price:899,
+image1:"product140a.jpg",
+image2:"product140b.jpg"
+}
+
+];
+
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+let productsPerPage = 7;
+
+let currentPage = 1;
+
+let totalPages =
+Math.ceil(
+products.length /
+productsPerPage
+);
+
+
+/* =========================================
+   SHOW PRODUCTS
+========================================= */
+
+function showPage(){
+
+    let startIndex =
+    (currentPage - 1)
+    *
+    productsPerPage;
+
+    let endIndex =
+    startIndex +
+    productsPerPage;
+
+    let pageProducts =
+    products.slice(
+        startIndex,
+        endIndex
+    );
+
+    let container =
+    document.getElementById(
+        "products"
+    );
+
+    container.innerHTML = "";
+
+
+    pageProducts.forEach(
+    function(product){
+
+        let card =
+        document.createElement(
+            "div"
+        );
+
+        card.className =
+        "product";
+
+
+        card.innerHTML = `
+
+        <div
+        class="image-slider">
+
+            <img
+            src="images/${product.image1}"
+            alt="${product.name}">
+
+            <img
+            src="images/${product.image2}"
+            alt="${product.name}">
+
+        </div>
+
+
+        <h2>
+        ${product.name}
+        </h2>
+
+
+        <p
+        class="description">
+
+        ${product.description}
+
+        </p>
+
+
+        <p
+        class="price">
+
+        ₹${product.price}
+
+        </p>
+
+
+        <button
+        class="whatsapp"
+
+        onclick="orderProduct(
+        '${product.name}',
+        '${product.price}'
+        )">
+
+        🟢 Order on WhatsApp
+
+        </button>
+
+        `;
+
+
+        container.appendChild(
+            card
+        );
+
+    });
+
+
+    document.getElementById(
+        "pageNumber"
+    ).innerText =
+
+    "Page " +
+    currentPage +
+    " of " +
+    totalPages;
+
+
+    document.getElementById(
+        "pageTitle"
+    ).innerText =
+
+    "✨ Beauty Products - Page " +
+    currentPage +
+    " ✨";
+
+
+    document.getElementById(
+        "prevBtn"
+    ).disabled =
+
+    currentPage === 1;
+
+
+    document.getElementById(
+        "nextBtn"
+    ).disabled =
+
+    currentPage === totalPages;
+
+
+    window.scrollTo(
+        0,
+        0
+    );
+
+}
+
+
+/* =========================================
+   NEXT
+========================================= */
+
+function nextPage(){
+
+    if(
+        currentPage <
+        totalPages
+    ){
+
+        currentPage++;
+
+        showPage();
+
+    }
+
+}
+
+
+/* =========================================
+   PREVIOUS
+========================================= */
+
+function previousPage(){
+
+    if(
+        currentPage >
+        1
+    ){
+
+        currentPage--;
+
+        showPage();
+
+    }
+
+}
+
+
+/* =========================================
+   WHATSAPP
+========================================= */
+
+function orderProduct(
+product,
+price
+){
+
+    let message =
+
+    "Hello, mujhe " +
+    product +
+    " chahiye." +
+
+    "\nPrice: ₹" +
+    price;
+
+
+    let url =
+
+    "https://wa.me/" +
+
+    whatsappNumber +
+
+    "?text=" +
+
+    encodeURIComponent(
+        message
+    );
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+/* =========================================
+   START
+========================================= */
+
+showPage();
+
+</script>
+
+</body>
+
+</html>
+</body>
+
+</html>
